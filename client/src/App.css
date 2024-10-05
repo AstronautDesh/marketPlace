@@ -1,0 +1,13 @@
+:root{
+  --absoluteWidth: 100vw;
+  --absoluteHeight: 100vh;
+  --bgColor: rgb(19, 1, 18);
+  }
+
+.App {
+  position: relative;
+  width: var(--absoluteWidth);
+  height: var(--absoluteHeight);
+  background-color: var(--bgColor);
+  color: wheat;
+}
