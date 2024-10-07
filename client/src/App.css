@@ -30,9 +30,7 @@ body, html {
 .App {
   position: relative;
   width: 100%;
-  max-width: var(--appWidth);
   height: 100%;
-  padding: .5rem .1rem;
   background-color: var(--bgColor);
   color: var(--color);
   overflow-y: auto;
