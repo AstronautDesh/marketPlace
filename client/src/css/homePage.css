@@ -1,0 +1,109 @@
+.homePage {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url('../Asset/man-wearing-watch.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: var(--fontFamily);
+}
+
+.sales-pitch-container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.sales-pitch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.watch-grid{
+  margin-top: 3rem;
+}
+.watch-grid,
+.box1,
+.box2,
+.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.box1:hover, .box2:hover{
+  transform: scale(1.1);
+  background-color: rgb(61, 41, 4);
+  color: orange;
+}
+
+.img-box {
+  width: 200px;
+  height: auto;
+  padding: .5rem;
+}
+
+.rating,
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: orangered;
+}
+
+.box1,
+.box2 {
+  padding: .4rem;
+  background-color: rgba(253, 211, 134, 0.3);
+  margin: .1rem;
+}
+
+.box3 {
+  text-align: center;
+  background-color: rgba(253, 211, 134, 0.3);
+  border-radius: .4rem;
+  border: .1px solid orangered;
+  width: 100%;
+  padding: 5px;
+}
+
+.desc {
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .box1,
+  .box2 {
+    height: auto;
+    padding: 10px;
+  }
+}
+
+/* Scrollbar styling for better user experience */
+.sales-pitch-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sales-pitch-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sales-pitch-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.sales-pitch-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}

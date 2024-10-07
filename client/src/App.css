@@ -1,13 +1,51 @@
-:root{
+/* App.css */
+@font-face {
+  font-family:Fondamento;
+  src: url('./Asset/Fontz/Fondamento-Regular.woff');
+}
+
+:root {
   --absoluteWidth: 100vw;
   --absoluteHeight: 100vh;
   --bgColor: rgb(19, 1, 18);
-  }
+  --color: wheat;
+  --appWidth: 100%;
+  --fontFamily: Fondamento;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bgColor);
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .App {
   position: relative;
-  width: var(--absoluteWidth);
-  height: var(--absoluteHeight);
+  width: 100%;
+  max-width: var(--appWidth);
+  height: 100%;
+  padding: .5rem .1rem;
   background-color: var(--bgColor);
-  color: wheat;
+  color: var(--color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.App-header{
+  position: absolute;
+  top: .5rem;
+  left: 65%;
+  width: fit-content;
+  border: 2px solid white;
+  padding: 0px .3rem;
+  margin-bottom: .9rem;
 }

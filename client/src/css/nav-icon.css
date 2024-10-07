@@ -1,0 +1,58 @@
+/* Style for the toggle button */
+.nav-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1031;
+    background: none;
+    border: none;
+    color: orangered;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  /* Adjust position when nav is open */
+  .nav-toggle-open {
+    left: 1rem;
+    z-index: 1031;
+  }
+  
+  /* Offcanvas width (80% of the viewport width) */
+  .custom-offcanvas.offcanvas-start {
+    width: 80%;
+    max-width: none; /* Allow the offcanvas to expand to 80% */
+  }
+  
+  /* Chevron inside the offcanvas for closing */
+  .close-offcanvas {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: orangered;
+    cursor: pointer;
+  }
+  
+  /* Ensure the offcanvas body styles are consistent */
+  .offcanvas {
+    background-color: var(--bgColor);
+    color: var(--color);
+  }
+  
+  /* Nav link styles */
+  .nav-link {
+    color: var(--color);
+    padding: 1rem 0;
+  }
+  
+  .nav-link:hover {
+    color: var(--color);
+    opacity: 0.8;
+  }
+  
+  /* Ensure the width does not conflict with other elements */
+  .offcanvas.offcanvas-start {
+    width: 80%;
+    transition: width 0.3s ease;
+  }
+  

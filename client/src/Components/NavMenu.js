@@ -1,59 +1,79 @@
-import React, { useState } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import '../css/nav-icon.css';
 
-const NavMenu = () => {
+const NavMenu = ({ setCurrentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const offcanvasRef = useRef(null);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+
+  const handleClickOutside = useCallback((event) => {
+    if (offcanvasRef.current && !offcanvasRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  const handleClickInsideOffcanvas = useCallback((event) => {
+    if (!event.target.closest('.nav-link')) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const offcanvasElement = offcanvasRef.current;
+  
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      offcanvasElement?.addEventListener('click', handleClickInsideOffcanvas);
+    }
+  
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      offcanvasElement?.removeEventListener('click', handleClickInsideOffcanvas);
+    };
+  }, [isOpen, handleClickOutside, handleClickInsideOffcanvas]);
+
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
+    setIsOpen(false);
+  };
 
   return (
-    <Navbar 
-      bg="light" 
-      expand={false} 
-      className="mb-3" 
-      style={{ 
-        position: 'fixed', 
-        top: '60px',
-        left: '10px',
-        zIndex: 1030,
-        width: 'auto'
-      }}
-    >
-      <Container fluid>
-        <Navbar.Toggle 
-          aria-controls="offcanvasNavbar" 
-          onClick={toggleMenu}
-          style={{ border: 'none' }}
-        >
-          <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
-        </Navbar.Toggle>
-        <Navbar.Offcanvas
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-          placement="start"
-          show={isOpen}
-          onHide={() => setIsOpen(false)}
-        >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#action3">Services</Nav.Link>
-              <Nav.Link href="#action4">Contact</Nav.Link>
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
+    <>
+      <button
+        className={`nav-toggle ${isOpen ? 'nav-toggle-open' : ''}`} 
+        onClick={toggleMenu}
+      >
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
+
+      <Offcanvas
+        show={isOpen}
+        onHide={() => setIsOpen(false)}
+        placement="start"
+        className="custom-offcanvas"
+      >
+        <Offcanvas.Header>
+          <Offcanvas.Title>
+            <button className="close-offcanvas" onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body ref={offcanvasRef}>
+          <Nav className="flex-column">
+            <Nav.Link onClick={() => handleNavClick('home')}>Home</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick('about')}>About</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick('services')}>Services</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick('contact')}>Contact</Nav.Link>
+          </Nav>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 };
 
