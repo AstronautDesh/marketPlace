@@ -1,9 +1,12 @@
 /* App.css */
 @font-face {
-  font-family:Fondamento;
-  src: url('./Asset/Fontz/Fondamento-Regular.woff');
+  font-family:bodyFont;
+  src: url('./Asset/Fontz/Urbanist-Regular.woff');
 }
-
+@font-face {
+  font-family:headerFont;
+  src: url('./Asset/Fontz/KaiseiDecol-Bold.woff');
+}
 :root {
   --absoluteWidth: 100vw;
   --absoluteHeight: 100vh;

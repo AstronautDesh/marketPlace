@@ -1,12 +1,10 @@
 .homePage {
   width: 100vw;
   height: 100vh;
-  background-image: url('../Asset/man-wearing-watch.webp');
+  background-image: url('../Asset/backgroundImages/man-wearing-watch.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: white;
-  font-family: var(--fontFamily);
   overflow: hidden; /* Hide any overflow */
 }
 
@@ -25,6 +23,7 @@
   justify-content: flex-end;
   padding: 20px;
   box-sizing: border-box;
+  color: black;
 }
 
 /* Rest of your CSS remains the same */
@@ -41,29 +40,35 @@
 }
 .box1, .box2{
   gap: .3rem;
-  background-color: rgba(231, 155, 14, 0.2);
+  background-color: rgba(231, 155, 14, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: .2rem .1rem rgb(63, 42, 3);
+  box-shadow: .2rem .1rem rgb(245, 192, 95);
+  border-radius: .3rem;
 }
 .rating, .price{
   text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
   flex: 1;
-  color: orange;
+  color: whitesmoke;
+  font-family: var(--headerFont);
 }
-.sales-pitch-text{
+.sales-pitch-text {
   width: 100%;
-  background-color: rgb(58, 19, 6, .8);
-  padding: .4rem;
-  border-radius: .4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  font-family: var(--bodyFont);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .desc{
   text-align: center;
   font-size: 1rem;
   padding: .2rem;
+  color: rgb(245, 244, 241);
 }
 .img-box{
   width: 150px;
