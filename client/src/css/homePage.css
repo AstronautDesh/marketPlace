@@ -7,14 +7,13 @@
   background-attachment: fixed;
   overflow: hidden; /* Hide any overflow */
 }
-
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  border: 2px solid red;
 }
-
 .sales-pitch {
   height: 100vh;
   scroll-snap-align: start;
@@ -25,22 +24,22 @@
   box-sizing: border-box;
   color: black;
 }
+.watch-grid{
+  padding: .5rem;
+}
+.img-box{
+  width: 250px;
+  height: fit-content;
+  padding: .5rem;
+}
 
-/* Rest of your CSS remains the same */
 .box-grid{
   display: flex;
   justify-content: center;
 }
 .box1, .box2{
-  border: .1px solid none;
-  margin: .1rem;
-}
-.watch-grid{
-  padding: .5rem;
-}
-.box1, .box2{
   gap: .3rem;
-  background-color: rgba(231, 155, 14, 0.7);
+  background-color: rgba(252, 169, 16, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,16 +48,16 @@
 }
 .rating, .price{
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   flex: 1;
-  color: whitesmoke;
-  font-family: var(--headerFont);
+  color: rgb(53, 1, 1);
+  font-family: var(--fontFamily);
 }
 .sales-pitch-text {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: rgba(126, 79, 4, 0.3);
+  backdrop-filter: saturate(180%) blur(10px);
   padding: 0.4rem;
   border-radius: 0.4rem;
   font-family: var(--bodyFont);
@@ -66,11 +65,10 @@
 }
 .desc{
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: .2rem;
   color: rgb(245, 244, 241);
-}
-.img-box{
-  width: 150px;
-  height: fit-content;
+  font-family: var(--bodyFont);
+  font-weight: bold;
+  line-height: 1.5rem;
 }

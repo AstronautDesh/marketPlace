@@ -1,11 +1,19 @@
 /* App.css */
 @font-face {
-  font-family:bodyFont;
-  src: url('./Asset/Fontz/Urbanist-Regular.woff');
+  font-family:headerFont;
+  src: url('./Asset/Fontz/Inknut_Antiqua/InknutAntiqua-ExtraBold.woff2');
 }
 @font-face {
-  font-family:headerFont;
-  src: url('./Asset/Fontz/KaiseiDecol-Bold.woff');
+  font-family:logoFont;
+  src: url('./Asset/Fontz/Inknut_Antiqua/InknutAntiqua-Regular.woff2');
+}
+@font-face {
+  font-family:bodyFont;
+  src: url('./Asset/Fontz/Inknut_Antiqua/InknutAntiqua-Light.woff2');
+}
+@font-face {
+  font-family:Fondamento;
+  src: url('./Asset/Fontz/Fondamento-Regular.woff');
 }
 :root {
   --absoluteWidth: 100vw;
@@ -14,6 +22,9 @@
   --color: wheat;
   --appWidth: 100%;
   --fontFamily: Fondamento;
+  --fontFamilyLogo: logoFont;
+  --fontFamilyHeader: headerFont;
+  --fontFamilyBody: bodyFont;
 }
 
 body, html {
@@ -46,7 +57,12 @@ body, html {
   top: .5rem;
   left: 65%;
   width: fit-content;
-  border: 2px solid white;
+  border: .2px solid orange;
   padding: 0px .3rem;
   margin-bottom: .9rem;
+  font-size: .8rem;
+  z-index: 200;
+  font-family: var(--fontFamilyBody);
+  text-decoration: none;
+  color: orange;
 }
