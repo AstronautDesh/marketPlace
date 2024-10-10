@@ -52,17 +52,4 @@ body, html {
   display: flex;
   flex-direction: column;
 }
-.App-header{
-  position: absolute;
-  top: .5rem;
-  left: 65%;
-  width: fit-content;
-  border: .2px solid orange;
-  padding: 0px .3rem;
-  margin-bottom: .9rem;
-  font-size: .8rem;
-  z-index: 200;
-  font-family: var(--fontFamilyBody);
-  text-decoration: none;
-  color: orange;
-}
+

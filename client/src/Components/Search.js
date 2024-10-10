@@ -5,7 +5,6 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "./CarouselSlide";
-import headerContent from '../App';
 import "../css/search.css";
 
 const Search = () => {
@@ -19,10 +18,6 @@ const Search = () => {
 
   return (
     <div className="search-container">
-      <header className="App-header">
-        {headerContent}
-        Time Square.
-      </header>
       <Carousel />
       <Container fluid className="search-overlay">
         <Row className="row-div">

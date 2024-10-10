@@ -102,7 +102,7 @@ const NavMenu = ({ setCurrentPage }) => {
               animate={isOpen ? "visible" : "hidden"}
               custom={index}
             >
-              <Nav.Link 
+              <Nav.Link
                 onClick={() => handleNavClick(link)}
                 className="nav-link"
               >

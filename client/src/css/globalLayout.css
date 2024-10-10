@@ -1,0 +1,25 @@
+.global-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+.App-header {
+    position: fixed;
+    top: .1rem;
+    left: 0;
+    width: 95%;
+    padding: 0.7rem;
+    text-align: end;
+    z-index: 1031;
+  }
+
+  .logo {
+    color: orange;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 0.3rem;
+  }

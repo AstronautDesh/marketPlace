@@ -12,7 +12,6 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  border: 2px solid red;
 }
 .sales-pitch {
   height: 100vh;
@@ -35,16 +34,17 @@
 
 .box-grid{
   display: flex;
-  justify-content: center;
+  padding: .3rem;
 }
 .box1, .box2{
-  gap: .3rem;
+  margin:0px .5rem;
   background-color: rgba(252, 169, 16, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: .2rem .1rem rgb(245, 192, 95);
   border-radius: .3rem;
+  flex: 1;
 }
 .rating, .price{
   text-align: center;
