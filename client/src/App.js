@@ -5,7 +5,7 @@ import GlobalLayout from './Layout/GlobalLayout';
 import NavMenu from './Layout/NavMenu'; // Import NavMenu component
 
 const HomePage = lazy(() => import('./Pages/HomePage'));
-const AboutPage = lazy(() => import('./Pages/AboutPage'));
+const HisWatch = lazy(() => import('./Pages/HisWatch'));
 const ServicesPage = lazy(() => import('./Pages/ServicesPage'));
 const ContactPage = lazy(() => import('./Pages/ContactPage'));
 const Search = lazy(() => import('./Components/Search')); // Moved Search to Pages
@@ -28,7 +28,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/home" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/mens" element={<HisWatch />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/search" element={<Search />} />

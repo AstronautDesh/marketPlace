@@ -93,7 +93,7 @@ const NavMenu = ({ setCurrentPage }) => {
         </button>
 
         <Nav className="nav-grid">
-          {['home', 'about', 'services', 'contact'].map((link, index) => (
+          {['home', 'mens', 'services', 'contact'].map((link, index) => (
             <motion.div
               className="motion-grid"
               key={link}

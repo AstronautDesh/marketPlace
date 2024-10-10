@@ -22,7 +22,7 @@ function HomePage() {
               <Row>
                 <Col
                   xs={12}
-                  className="watch-grid d-flex justify-content-center align-items-center"
+                  className="watch-grid"
                 >
                   <img src={pitch.image} className="img-box" alt="wrist-watch" />
                 </Col>
