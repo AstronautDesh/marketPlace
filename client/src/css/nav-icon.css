@@ -59,17 +59,20 @@
   padding-top: 6rem;
 }
 .motion-grid{
-  margin-top: 1rem;
+  margin-top: .1rem;
   padding: .9rem;
 }
 /* Nav link styles */
 .nav-link {
   color: #fff;
-  padding: 1rem 0;
+  padding: .1rem 0;
   transition: color 0.3s ease;
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-top: .3rem;
 }
 
 .nav-link:hover {

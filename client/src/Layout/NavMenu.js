@@ -2,17 +2,23 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Nav from 'react-bootstrap/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../css/nav-icon.css';
 
 const NavMenu = ({ setCurrentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMensDropdownOpen, setIsMensDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const offcanvasRef = useRef(null);
   const navigate = useNavigate(); // Initialize useNavigate hook
 
   // Toggle menu state
   const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+
+  // Toggle dropdown states
+  const toggleMensDropdown = useCallback(() => setIsMensDropdownOpen(prev => !prev), []);
+  const toggleServicesDropdown = useCallback(() => setIsServicesDropdownOpen(prev => !prev), []);
 
   // Handle click outside to close menu
   const handleClickOutside = useCallback((event) => {
@@ -93,23 +99,95 @@ const NavMenu = ({ setCurrentPage }) => {
         </button>
 
         <Nav className="nav-grid">
-          {['home', 'mens', 'services', 'contact'].map((link, index) => (
-            <motion.div
-              className="motion-grid"
-              key={link}
-              variants={linkVariants}
-              initial="hidden"
-              animate={isOpen ? "visible" : "hidden"}
-              custom={index}
+          <motion.div
+            className="motion-grid"
+            variants={linkVariants}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            custom={0}
+          >
+            <Nav.Link
+              onClick={() => handleNavClick('home')}
+              className="nav-link"
             >
-              <Nav.Link
-                onClick={() => handleNavClick(link)}
-                className="nav-link"
-              >
-                {link.charAt(0).toUpperCase() + link.slice(1)}
-              </Nav.Link>
-            </motion.div>
-          ))}
+              Home
+            </Nav.Link>
+          </motion.div>
+
+          {/* Mens dropdown */}
+          <motion.div
+            className="motion-grid"
+            variants={linkVariants}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            custom={1}
+          >
+            <div className="nav-link dropdown-toggle" onClick={toggleMensDropdown}>
+              Mens <FontAwesomeIcon icon={faChevronDown} />
+            </div>
+            <AnimatePresence>
+              {isMensDropdownOpen && (
+                <motion.div
+                  className="dropdown-menu"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <Nav.Link onClick={() => handleNavClick('mens/classic')} className="dropdown-item">
+                    Classic
+                  </Nav.Link>
+                  <Nav.Link onClick={() => handleNavClick('mens/heritage')} className="dropdown-item">
+                    Heritage
+                  </Nav.Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Services dropdown */}
+          <motion.div
+            className="motion-grid"
+            variants={linkVariants}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            custom={2}
+          >
+            <div className="nav-link dropdown-toggle" onClick={toggleServicesDropdown}>
+              Services <FontAwesomeIcon icon={faChevronDown} />
+            </div>
+            <AnimatePresence>
+              {isServicesDropdownOpen && (
+                <motion.div
+                  className="dropdown-menu"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <Nav.Link onClick={() => handleNavClick('services/design')} className="dropdown-item">
+                    Design
+                  </Nav.Link>
+                  <Nav.Link onClick={() => handleNavClick('services/consulting')} className="dropdown-item">
+                    Consulting
+                  </Nav.Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          <motion.div
+            className="motion-grid"
+            variants={linkVariants}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            custom={3}
+          >
+            <Nav.Link
+              onClick={() => handleNavClick('contact')}
+              className="nav-link"
+            >
+              Contact
+            </Nav.Link>
+          </motion.div>
         </Nav>
       </motion.div>
     </>

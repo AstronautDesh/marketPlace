@@ -1,0 +1,194 @@
+  .mens-heritage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #faf6f6;
+  }
+  /* Search toggle icon */
+  .search-toggle {
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    z-index: 50;
+    color: orange;
+  }
+  .search-grid {
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+.search-grid {
+  
+  }
+  .search-bar {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 2px solid orange;
+    background-color: white;
+    border-radius: .4rem;
+}
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+  /* Image grid */
+  .image-grid {
+    position: relative;
+    width: 100%;
+    height: 500px;
+  }
+  
+  .grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+  .about-heritage {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .product-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: .6rem;
+    margin-top: 15rem;
+  }
+
+/* Filter container styling */
+.filter-container {
+    padding: 1rem;
+    width: fit-content;
+    font-size: 1.2rem;
+    position: relative; /* Ensures dropdown is positioned relative to the container */
+  }
+  
+  /* Filter toggle button styling */
+  .filter-toggle {
+    background: orange;
+    width: 150px;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem); /* Positioned 0.5rem below the toggle */
+    left: 0;
+    background: rgba(250, 176, 38, 0.3); /* Lighter background with transparency */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    z-index: 999; /* Higher z-index to overlap other elements */
+    width: 100%; /* Ensures the dropdown is the same width as the toggle */
+  }
+  
+  /* Dropdown menu list items */
+  .dropdown-menu li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: white; /* A solid background to stand out */
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+ /* Watch grid styling */
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* For small screens */
+    gap: 1rem;
+    width: 90%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 50, 47);
+    justify-content: center; /* Centers the grid items horizontally */
+    align-content: center; /* Centers the grid content vertically within the grid container */
+    place-items: center; /* Centers each individual grid item both horizontally and vertically */
+    margin-top: 2rem;
+  }
+  .watch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .watch-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: .4rem;
+  }
+  .watch-image:hover {
+    scale: 1.1;
+    transition: all .3s ease-in-out;
+    background-color: #faf6f6;
+  }
+  
+  .watch-spec {
+    padding: .5rem;
+    height: 100px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Responsive watch-grid */
+  @media (min-width: 768px) {
+    .watch-grid {
+      grid-template-columns: repeat(4, 1fr); /* Medium screens */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .watch-grid {
+      grid-template-columns: repeat(6, 1fr); /* Large screens */
+    }
+  }
+  
